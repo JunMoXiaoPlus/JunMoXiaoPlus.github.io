@@ -56,16 +56,20 @@
   };
 </script>
 
-  <meta name="description" content="君莫笑">
+  <meta name="description" content="博客文章阅读量排行榜">
 <meta property="og:type" content="website">
-<meta property="og:title" content="JunMoXiaoPlus">
-<meta property="og:url" content="https://junmoxiaoplus.github.io/archives/index.html">
+<meta property="og:title" content="文章阅读量排行榜">
+<meta property="og:url" content="https://junmoxiaoplus.github.io/top/index.html">
 <meta property="og:site_name" content="JunMoXiaoPlus">
-<meta property="og:description" content="君莫笑">
+<meta property="og:description" content="博客文章阅读量排行榜">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-22T07:09:10.587Z">
+<meta property="article:modified_time" content="2020-01-22T07:09:10.587Z">
 <meta property="article:author" content="JunMoXiaoPlus">
+<meta property="article:tag" content="top">
+<meta property="article:tag" content="文章阅读量排行榜">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://junmoxiaoplus.github.io/archives/">
+  <link rel="canonical" href="https://junmoxiaoplus.github.io/top/">
 
 
 <script id="page-configurations">
@@ -74,12 +78,15 @@
     sidebar: "",
     isHome: false,
     isPost: false,
-    isPage: false,
-    isArchive: true
+    isPage: true,
+    isArchive: false
   };
 </script>
 
-  <title>归档 | JunMoXiaoPlus</title>
+  <title>
+      文章阅读量排行榜 | JunMoXiaoPlus
+    
+  </title>
   
 
 
@@ -301,66 +308,68 @@
           <div class="content">
             
 
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        
-        
-          
-        
-        <span class="collection-header">嗯..! 目前共计 1 篇日志。 继续努力。</span>
-      </div>
-      
-
-      
-
-  
-  
-
-  
+  <div class="posts-expand">
     
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">文章阅读量排行榜
   
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+</h1>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-21T10:05:07+08:00"
-              content="2020-01-21">
-          01-21
-        </time>
+<div class="post-meta">
+    <div class="post-description">博客文章阅读量排行榜</div>
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <style>.post-description { display: none; }</style>
+
+<p><div id="top"></div></p>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script>AV.initialize("[APP_ID]", "[APP_KEY]");</script> //输入个人LeanCloud账号AppID 输入个人LeanCloud账号AppKey
+<script type="text/javascript">
+  var time=0
+  var title=""
+  var url=""
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time'); //结果按阅读次数降序排序
+  query.limit(10); //最终只返回10条结果
+  query.find().then(function (todo) {
+    for (var i=0;i<1000;i++){
+      var result=todo[i].attributes;
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      var content="<a href='"+"https://zhihuya188.github.io"+url+"'>"+title+"</a>"+"<br />"+"<font color='#555'>"+"阅读次数："+time+"</font>"+"<br /><br />";
+      document.getElementById("top").innerHTML+=content
+    }
+  }, function (error) {
+    console.log("error");
+  });
+</script>
+        
       </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/JunMoXiaoPlus/2020/01/21/hello-world.html" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-
+      
+      
+      
     </div>
+    
+
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -377,6 +386,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
