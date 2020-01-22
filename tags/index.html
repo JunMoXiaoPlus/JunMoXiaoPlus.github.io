@@ -390,7 +390,7 @@
           </div>
           
     
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments" id="comments"></div>
   
 
         </div>
@@ -738,23 +738,31 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: 'Iv1.5887003ce63050c4',
-      clientSecret: '9cd607c8ccdaf96ee14970198e36a437ab3db676',
-      repo: 'JunMoXiaoPlus.github.io',
-      owner: 'JunMoXiaoPlus',
-      admin: ['JunMoXiaoPlus'],
-      id: 'f47af1d1eda4d807b02bba32be15120b',
-        language: 'zh-CN',
-      
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
+NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'SBaxUq3OU02Cni75Pq1R57sX-gzGzoHsz',
+    appKey: '0mEUyn4onywX3ox45oA0tQTg',
+    placeholder: "欢迎畅所欲言",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
 </script>
 
 </body>
